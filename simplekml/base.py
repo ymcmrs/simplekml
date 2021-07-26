@@ -19,6 +19,7 @@ Contact me at kyle.lan@gmail.com
 
 import os
 import cgi
+import html # replace cgi  Yunmeng Cao, July 2021
 import xml.dom.minidom
 from simplekml.makeunicode import u
 
@@ -78,7 +79,7 @@ class Kmlable(object):
                 starttext = starttext[starttext.find(cdataend)+len(cdataend):]
             endtext += starttext
         else:
-            endtext = cgi.escape(text)
+            endtext = html.escape(text)
         return endtext
 
     @classmethod
